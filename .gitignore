@@ -1,0 +1,7 @@
+# ghci output
+*.o
+*.hi
+*.exe
+
+# bf source
+*.bf
