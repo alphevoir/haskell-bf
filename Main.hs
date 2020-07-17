@@ -30,6 +30,5 @@ main = do
     Left e -> noparse $ getError e
 
     Right bf -> do
-      _ <- run bf
-
-      return ()
+      mem <- run bf
+      memPP mem

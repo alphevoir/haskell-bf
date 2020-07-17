@@ -1,5 +1,7 @@
 module Runner
-(run)
+( run
+, memPP
+)
 where
 
 import BF
