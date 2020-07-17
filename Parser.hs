@@ -78,12 +78,12 @@ charP c = Parser match
     match _ = Left $ ParserError "Error: Missing EOF"
 
 leftP, rightP, incrementP, decrementP, inputP, outputP :: Parser BF
-leftP = (const L) <$> charP left
-rightP = (const R) <$> charP right
-incrementP = (const Inc) <$> charP increment
-decrementP = (const Dec) <$> charP decrement
-inputP = (const In) <$> charP input
-outputP = (const Out) <$> charP output
+leftP = L <$ charP left
+rightP = R <$ charP right
+incrementP = Inc <$ charP increment
+decrementP = Dec <$ charP decrement
+inputP = In <$ charP input
+outputP = Out <$ charP output
 
 loopP :: Parser BF
 loopP = Loop <$> (charP loopL *> codeP <* charP loopR)

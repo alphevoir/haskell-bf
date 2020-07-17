@@ -10,7 +10,7 @@ parseArgs ["-h"] = usage >> exit
 parseArgs [] = getContents
 parseArgs ["-i", f] = readFile f
 parseArgs [str] = return str
-parseArgs _ = usage >> die "-1"
+parseArgs _ = usage >> die "Incorrect usage"
 
 usage :: IO ()
 usage = putStrLn "Usage: bf [-h] [-i file]"
