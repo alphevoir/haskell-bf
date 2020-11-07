@@ -6,6 +6,7 @@ where
 
 import BF
 import Data.Char (chr, ord)
+import System.IO (hFlush, stdout)
 
 data Memory
    = Memory
@@ -75,7 +76,8 @@ run is = go is newMemory
         char <- getChar
         go is (setMem (ord char) mem)
       Out -> do
-        _ <- putChar $ chr $ readMem mem
+        putChar $ chr $ readMem mem
+        hFlush stdout
         go is mem
       Loop js -> case readMem mem of
         0 -> go is mem

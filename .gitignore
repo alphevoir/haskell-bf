@@ -2,6 +2,7 @@
 *.o
 *.hi
 *.exe
+bf
 
 # bf source
 *.bf
